@@ -2,15 +2,16 @@ import React from "react";
 import Header from "./Header";
 
 function App(){
-  const name = "Thato";
-  const name2 = "Haley";
+  const name = "This cart name";
+  const type = "This cart food type";
+  const pic = "This cart picture";
   return (
     <React.Fragment>
       <Header/>
-      <h3>3a</h3>
-      <h3>{name} and {name2}</h3>
-      <p><em>Firebase entries not saving!</em></p>
-      <hr/>
+      <h3>{name}</h3>
+      <h3>{type}</h3>
+      <h3>{pic}</h3>
+    <hr/>
     </React.Fragment>
   );
 }
