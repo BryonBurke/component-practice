@@ -10,7 +10,7 @@ function App(){
       <Header/>
       <h3>{name}</h3>
       <h3>{type}</h3>
-      <h3>{pic}</h3>
+      <img src="./components/images/cart1.jpeg" alt="Logo" />
     <hr/>
     </React.Fragment>
   );
