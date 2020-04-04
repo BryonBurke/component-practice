@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import cart1 from ./images/cart1
 
 function App(){
   const name = "This cart name";
@@ -10,7 +11,7 @@ function App(){
       <Header/>
       <h3>{name}</h3>
       <h3>{type}</h3>
-      <img src="./components/images/cart1.jpeg" alt="Logo" />
+      <img src={cart1} alt="Logo" />
     <hr/>
     </React.Fragment>
   );
