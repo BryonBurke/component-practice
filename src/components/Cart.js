@@ -7,6 +7,7 @@ function Cart(props) {
       <h3>{props.menu}</h3>
       <h3>{props.cartpic}</h3>
       <hr/>
+      <hr/>
 
     </React.Fragment>
   );

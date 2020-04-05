@@ -1,12 +1,14 @@
 import React from "react";
 import Header from "./Header";
-import TicketList from "./CartPod";
+import CartPod from "./CartPod";
+import Footer from "./Footer";
 
 function App() {
   return (
     <React.Fragment>
       <Header />
-      <TicketList />
+      <CartPod />
+      <Footer/>
     </React.Fragment>
   );
 }
