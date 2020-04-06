@@ -1,23 +1,39 @@
-import React from "react";
-import Cart from "./Cart";
+import React from 'react';
+import Cart from './Cart';
 
-const cartName = "Tito's Tacos"
+const masterCartList = [
+  {
+    name: 'cart 1',
+    menu: 'menu 1',
+    cartpic: 'cartpic 1'
+  },
+  {
+    name: 'cart 2',
+    menu: 'menu 2',
+    cartpic: 'cartpic 2'
+  },
+  {
+    name: 'cart 3',
+    menu: 'menu 3',
+    cartpic: 'cartpic 3'
+  },
 
-function CartPod() {
+];
+
+const CartPod = () => {
   return (
     <React.Fragment>
-      <Cart
-        name={cartName}
-        menu="menu goes here"
-        cartpic="cart pic goes here" />
-      <Cart
-        name="Cart number 2"
-        menu="menu cart number 2"
-        cartpic="cart2 pic"
-      />
+      <hr />
+      {masterCartList.map((cart, index) => (
+        <Cart
+          name={cart.name}
+          menu={cart.menu}
+          cartpic={cart.cartpic}
+          key={index}
+        />
+      ))}
     </React.Fragment>
-
   );
 }
-
+ 
 export default CartPod;
