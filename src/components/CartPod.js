@@ -5,7 +5,7 @@ const masterCartList = [
   {
     name: 'cart 1',
     menu: 'menu 1',
-    cartpic: 'cartpic 1'
+    cartpic: img src=../images/'cart1.jpeg' alt='a picture'
   },
   {
     name: 'cart 2',
