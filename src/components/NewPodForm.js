@@ -1,11 +1,33 @@
 import React from 'react';
+import { v4 } from 'uuid';
 
 const NewPodForm = (props) => {
   return ( 
     <React.Fragment>
-      <h3> This is a form</h3>
+      <form onSubmit={handleNewPodFormSubmission}>
+        <input
+          type='text'
+          name='name'
+          placeholder='Cart Name' />
+        <input
+          type='text'
+          name='menu'
+          placeholder='menu' />
+        <textarea
+          name='issue'
+          placeholder='Describe your issue.' />
+        <button type='submit'>Help!</button>
+      </form>
     </React.Fragment>
    );
 }
+
+const handleNewPodFormSubmission = (event) => {
+  event.preventDefault();
+  console.log(event.target.name.value);
+  console.log(event.target.menu.value);
+  console.log(event.target.issue.value);
+}
+ 
  
 export default NewPodForm;

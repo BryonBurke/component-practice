@@ -6,7 +6,7 @@ const masterCartList = [
   {
     name: "cart 1",
     menu: "menu 1",
-    cartpic: <img src={cartpicture} height="100" width="100" alt="a picture" />,
+    cartpic: <img src={cartpicture} height="100" width="100" alt="" />,
   },
   {
     name: "cart 2",
