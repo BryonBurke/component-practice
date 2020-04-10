@@ -1,6 +1,6 @@
 import React from 'react';
 import NewCartForm from './NewCartForm';
-import CartPod from './CartPod';
+import CartList from './CartList';
 
 class PodControl extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class PodControl extends React.Component {
       currentlyVisibleState = <NewCartForm/>
       buttonText = "Return to Cart Pod";
     } else {
-      currentlyVisibleState = <CartPod/>
+      currentlyVisibleState = <CartList/>
       buttonText = "Add cart";
     }
     return ( 
