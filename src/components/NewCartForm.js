@@ -1,10 +1,10 @@
 import React from 'react';
 import { v4 } from 'uuid';
 
-const NewPodForm = (props) => {
+const NewCartForm = (props) => {
   return ( 
     <React.Fragment>
-      <form onSubmit={handleNewPodFormSubmission}>
+      <form onSubmit={handleNewCartFormSubmission}>
         <input
           type='text'
           name='name'
@@ -22,7 +22,7 @@ const NewPodForm = (props) => {
    );
 }
 
-const handleNewPodFormSubmission = (event) => {
+const handleNewCartFormSubmission = (event) => {
   event.preventDefault();
   console.log(event.target.name.value);
   console.log(event.target.menu.value);
@@ -30,4 +30,4 @@ const handleNewPodFormSubmission = (event) => {
 }
  
  
-export default NewPodForm;
+export default NewCartForm;
