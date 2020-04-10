@@ -1,7 +1,8 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
-const NewCartForm = (props) => {
+function NewCartForm(props) {
   return ( 
     <React.Fragment>
       <form onSubmit={handleNewCartFormSubmission}>
@@ -14,20 +15,27 @@ const NewCartForm = (props) => {
           name='menu'
           placeholder='menu' />
         <textarea
-          name='issue'
-          placeholder='Describe your issue.' />
+          name='description'
+          placeholder='Describe the cart.' />
         <button type='submit'>Help!</button>
       </form>
     </React.Fragment>
    );
 }
 
-const handleNewCartFormSubmission = (event) => {
+function handleNewCartFormSubmission (event){
   event.preventDefault();
-  console.log(event.target.name.value);
-  console.log(event.target.menu.value);
-  console.log(event.target.issue.value);
+  props.onNewCartCreation({ 
+    name: event.target.name.value, 
+    menu: event.target.menu.value, 
+    description: event.target.description.value, 
+ 
+  });
 }
+
+NewCartForm.propTypes ={
+  onNewCartCreation: PropTypes.func
+};
  
  
 export default NewCartForm;

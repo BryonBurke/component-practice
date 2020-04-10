@@ -1,6 +1,6 @@
 import React from 'react';
 import NewCartForm from './NewCartForm';
-import CartPod from './CartPod';
+import CartList from './CartList';
 
 class PodControl extends React.Component {
   constructor(props) {
@@ -14,19 +14,25 @@ class PodControl extends React.Component {
  handleClick = () =>{
    this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
  }
+
+  handleAddingNewCartToList = (newCart) => {
+    const newMasterCartList = this.state.masterCartList.concat(newCart);
+    this.setState({ masterCartList: newMasterCartList });
+    this.setState({ formVisibleOnPage: false });
+  }
    
 
   render() { 
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleState = <NewCartForm 
-      onNewPodCreation={this.handleAddingNewCartToPod}/>
+      currentlyVisibleState = 
+      <NewCartForm onNewCartCreation={this.handleAddingNewCartToPod}/>
       buttonText = "Return to Cart Pod";
     } else {
-      currentlyVisibleState = <CartPod 
-      cartPod={this.state.masterCartList}/>
-      buttonText = "Add pod";
+      currentlyVisibleState = 
+      <CartList cartList={this.state.masterCartList}/>
+      buttonText = "Add Cart";
     }
     return ( 
       <React.Fragment>
