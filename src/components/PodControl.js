@@ -6,7 +6,7 @@ class PodControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
       masterCartList: []
      }
   }
@@ -20,10 +20,12 @@ class PodControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleState = <NewPodForm/>
+      currentlyVisibleState = <NewPodForm 
+      onNewPodCreation={this.handleAddingNewCartToPod}/>
       buttonText = "Return to Cart Pod";
     } else {
-      currentlyVisibleState = <CartPod/>
+      currentlyVisibleState = <CartPod 
+      cartPod={this.state.masterCartList}/>
       buttonText = "Add pod";
     }
     return ( 
