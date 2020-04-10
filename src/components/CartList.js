@@ -4,18 +4,18 @@ import PropTypes from 'prop-types'
 
 
 
-const CartList = (props) => {
+function CartList(props) {
   return (
     <React.Fragment>
       <hr />
-      {props.cartList.map((cart, index) => (
+      {props.cartList.map((cart, index) => 
         <Cart
           name={cart.name}
           menu={cart.menu}
           description={cart.description}
           key={index}
         />
-      ))}
+      )}
     </React.Fragment>
   );
 }

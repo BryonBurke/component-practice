@@ -29,7 +29,7 @@ function handleNewCartFormSubmission (event){
     name: event.target.name.value, 
     menu: event.target.menu.value, 
     description: event.target.description.value, 
- 
+    id: v4() 
   });
 }
 
