@@ -1,7 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
 
-const NewPodForm = (props) => {
+const NewCartForm = (props) => {
   return ( 
     <React.Fragment>
       <form onSubmit={handleNewPodFormSubmission}>
@@ -16,7 +16,7 @@ const NewPodForm = (props) => {
         <textarea
           name='issue'
           placeholder='Describe your issue.' />
-        <button type='submit'>Help!</button>
+        <button type='submit'>addNewPod!</button>
       </form>
     </React.Fragment>
    );
@@ -30,4 +30,4 @@ const handleNewPodFormSubmission = (event) => {
 }
  
  
-export default NewPodForm;
+export default NewCartForm;

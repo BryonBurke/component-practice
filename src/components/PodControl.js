@@ -1,5 +1,5 @@
 import React from 'react';
-import NewPodForm from './NewPodForm';
+import NewCartForm from './NewCartForm';
 import CartPod from './CartPod';
 
 class PodControl extends React.Component {
@@ -19,11 +19,11 @@ class PodControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleState = <NewPodForm/>
+      currentlyVisibleState = <NewCartForm/>
       buttonText = "Return to Cart Pod";
     } else {
       currentlyVisibleState = <CartPod/>
-      buttonText = "Add pod";
+      buttonText = "Add cart";
     }
     return ( 
       <React.Fragment>
