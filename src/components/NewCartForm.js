@@ -1,5 +1,6 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 const NewCartForm = (props) => {
   return ( 
@@ -24,10 +25,12 @@ const NewCartForm = (props) => {
 
 const handleNewPodFormSubmission = (event) => {
   event.preventDefault();
-  console.log(event.target.name.value);
-  console.log(event.target.menu.value);
-  console.log(event.target.issue.value);
+  props.onNewCartCreation({ name: event.target.name.value, menu: event.target.menu.value, description: event.target.description.value, id: v4() });
 }
+
  
- 
+NewCartForm.propTypes = {
+  onNewCartCreation: PropTypes.func
+};
+
 export default NewCartForm;

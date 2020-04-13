@@ -27,7 +27,7 @@ class PodControl extends React.Component {
     let buttonText = null;
     if (this.state.formVisibleOnPage){
       currentlyVisibleState = 
-      <NewCartForm/>
+        <NewCartForm onNewCartCreation={this.handleAddingNewCartToList} />
       buttonText = "Return to Cart Pod";
     } else {
       currentlyVisibleState = 
