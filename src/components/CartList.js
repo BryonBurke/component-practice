@@ -11,7 +11,7 @@ const masterCartList = [
   {
     name: "cart 2",
     menu: "menu 2",
-    description: 'thai food',
+    description: 'thai comfort food',
   },
   {
     name: "cart 3",
