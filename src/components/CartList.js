@@ -1,27 +1,39 @@
 import React from 'react';
 import Cart from './Cart';
-import PropTypes from 'prop-types'
 
 
+const masterCartList = [
+  {
+    name: "cart 1",
+    menu: "menu 1",
+    description: "mexican food",
+  },
+  {
+    name: "cart 2",
+    menu: "menu 2",
+    description: 'thai food',
+  },
+  {
+    name: "cart 3",
+    menu: "menu 3",
+    description: "gyros",
+  },
+];
 
-function CartList(props) {
+const CartList = () => {
   return (
     <React.Fragment>
       <hr />
-      {props.cartList.map((cart, index) => 
+      {masterCartList.map((cart, index) => (
         <Cart
           name={cart.name}
           menu={cart.menu}
           description={cart.description}
           key={index}
         />
-      )}
+      ))}
     </React.Fragment>
   );
 }
-
-CartList.propTypes = {
-  cartList: PropTypes.array
-};
  
 export default CartList;

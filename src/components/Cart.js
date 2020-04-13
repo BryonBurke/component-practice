@@ -1,6 +1,6 @@
 import React from "react";
 
-function Cart(props) {
+const Cart = (props) => {
   return (
     <React.Fragment>
       <h3>{props.name}</h3>

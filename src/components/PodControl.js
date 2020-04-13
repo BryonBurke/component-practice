@@ -8,7 +8,7 @@ class PodControl extends React.Component {
     this.state = { 
       formVisibleOnPage: false,
       masterCartList: []
-     };
+     }
   }
 
  handleClick = () =>{
@@ -27,12 +27,12 @@ class PodControl extends React.Component {
     let buttonText = null;
     if (this.state.formVisibleOnPage){
       currentlyVisibleState = 
-      <NewCartForm onNewCartCreation={this.handleAddingNewCartToList}/>
+      <NewCartForm/>
       buttonText = "Return to Cart Pod";
     } else {
       currentlyVisibleState = 
       <CartList cartList={this.state.masterCartList}/>
-      buttonText = "Add Cart";
+      buttonText = "Add cart";
     }
     return ( 
       <React.Fragment>
