@@ -21,6 +21,6 @@ I have imported PropTypes in NewCartForm and defined onNewCartCreation PropType 
 I would also appreciate guidance on how I would use console logging to troubleshoot this issue. 
 
 Thanks! Stay safe
-Bryon
+Bryon b
 
 
