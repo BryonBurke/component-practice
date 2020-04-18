@@ -3,6 +3,10 @@ import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 const NewCartForm = (props) => {
+  const handleNewPodFormSubmission = (event) => {
+    event.preventDefault();
+    props.onNewCartCreation({ name: event.target.name.value, menu: event.target.menu.value, description: event.target.description.value, id: v4() });
+  }
   return ( 
     <React.Fragment>
       <form onSubmit={handleNewPodFormSubmission}>
@@ -23,10 +27,6 @@ const NewCartForm = (props) => {
    );
 }
 
-const handleNewPodFormSubmission = (event) => {
-  event.preventDefault();
-  props.onNewCartCreation({ name: event.target.name.value, menu: event.target.menu.value, description: event.target.description.value, id: v4() });
-}
 
  
 NewCartForm.propTypes = {
