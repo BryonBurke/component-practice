@@ -6,8 +6,7 @@ const Cart = (props) => {
       <h3>{props.name}</h3>
       <h3>{props.menu}</h3>
       <h3>{props.description}</h3>
-     
-      
+           
       <hr/>
       <hr/>
 
