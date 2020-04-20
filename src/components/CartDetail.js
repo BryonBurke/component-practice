@@ -1,13 +1,13 @@
 import React from 'react';
 
-const TicketDetail = (props) => {
+const CartDetail = (props) => {
   return ( 
     <React.Fragment>
-      <h1>Ticket Detail</h1>
+      <h1>Cart Detail</h1>
       <hr/>
     </React.Fragment>
    );
 }
  
-export default TicketDetail;
+export default CartDetail;
 
