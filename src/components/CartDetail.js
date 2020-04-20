@@ -10,3 +10,4 @@ const TicketDetail = (props) => {
 }
  
 export default TicketDetail;
+

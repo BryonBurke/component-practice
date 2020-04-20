@@ -2,9 +2,6 @@ import React from 'react';
 import Cart from './Cart';
 import PropTypes from 'prop-types'
 
-
-
-
 const CartList = (props) => {
   return (
     <React.Fragment>
@@ -13,8 +10,7 @@ const CartList = (props) => {
         <Cart
           name={cart.name}
           menu={cart.menu}
-          description={cart.description}
-        
+          description={cart.description} 
         />
       ))}
     </React.Fragment>
