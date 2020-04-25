@@ -1,13 +1,13 @@
 import React from 'react';
 
-const CartDetail = (props) => {
+const CartlDetail = (props) => {
   return ( 
     <React.Fragment>
-      <h1>Cart Detail</h1>
+      <h1>Cartl Detail</h1>
       <hr/>
     </React.Fragment>
    );
 }
  
-export default CartDetail;
+export default CartlDetail;
 

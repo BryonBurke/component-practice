@@ -8,9 +8,12 @@ const CartList = (props) => {
       <hr />
       {props.cartList.map((cart) => (
         <Cart
+          whenCartClicked = { props.onCartSelection }
           name={cart.name}
           menu={cart.menu}
-          description={cart.description} 
+          description={cart.description}
+          id = {cart.id}
+          key = {cart.id}
         />
       ))}
     </React.Fragment>
@@ -18,7 +21,8 @@ const CartList = (props) => {
 }
 
 CartList.propTypes = {
-  cartList: PropTypes.array
+  cartList: PropTypes.array,
+  onTicketSelection: PropTypes.func
 };
  
 export default CartList;

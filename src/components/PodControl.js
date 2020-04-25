@@ -24,7 +24,7 @@ class PodControl extends React.Component {
   }
 
   handleChangingSelectedCart = (id) => {
-    const selectedCart = this.state.masterCartList.filter(ticket => ticket.id === id)[0];
+    const selectedCart = this.state.masterCartList.filter(cart => cart.id === id)[0];
     this.setState({selectedCart: selectedCart});
   }
    
@@ -43,7 +43,7 @@ class PodControl extends React.Component {
       buttonText = "Return to Cart Pod";
     } else {
       currentlyVisibleState = 
-        <CartList cartList={this.state.masterCartList}/>
+        <CartList cartList={this.state.masterCartList} onCartSelection = {this.handleChangingSelectedCart}/>
       buttonText = "Add cart";
     }
     return ( 
