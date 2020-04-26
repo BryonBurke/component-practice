@@ -6,52 +6,65 @@ import CartDetail from './CartDetail'
 class PodControl extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       formVisibleOnPage: false,
       masterCartList: [],
-      selectedCart: null
-     }
+      selectedCart: null,
+    };
   }
 
- handleClick = () =>{
-   this.setState(prevState => ({formVisibleOnPage: !prevState.formVisibleOnPage}));
- }
+  handleClick = () => {
+    if (this.state.selectedCart != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedCart: null,
+      });
+    } else {
+      this.setState((prevState) => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  };
 
   handleAddingNewCartToList = (newCart) => {
     const newMasterCartList = this.state.masterCartList.concat(newCart);
     this.setState({ masterCartList: newMasterCartList });
     this.setState({ formVisibleOnPage: false });
-  }
+  };
 
   handleChangingSelectedCart = (id) => {
-    const selectedCart = this.state.masterCartList.filter(cart => cart.id === id)[0];
-    this.setState({selectedCart: selectedCart});
-  }
-   
+    const selectedCart = this.state.masterCartList.filter(
+      (cart) => cart.id === id
+    )[0];
+    this.setState({ selectedCart: selectedCart });
+  };
 
-  render() { 
+  render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.selectedCart != null){
-      currentlyVisibleState = 
-        <CartDetail cart = {this.state.selectedCart} />
-      buttonText = "Return to Cart Pod"
-    }
-    else if (this.state.formVisibleOnPage){
-      currentlyVisibleState = 
+    if (this.state.selectedCart != null) {
+      currentlyVisibleState = <CartDetail cart={this.state.selectedCart} />;
+      buttonText = "Return to Cart Pod";
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = (
         <NewCartForm onNewCartCreation={this.handleAddingNewCartToList} />
+      );
       buttonText = "Return to Cart Pod";
     } else {
-      currentlyVisibleState = 
-        <CartList cartList={this.state.masterCartList} onCartSelection = {this.handleChangingSelectedCart}/>
+      currentlyVisibleState = (
+        <CartList
+          cartList={this.state.masterCartList}
+          onCartSelection={this.handleChangingSelectedCart}
+        />
+      );
       buttonText = "Add cart";
     }
-    return ( 
+    return (
       <React.Fragment>
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
-     );
+    );
   }
 }
  
