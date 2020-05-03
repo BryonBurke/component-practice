@@ -5,7 +5,12 @@ import PropTypes from 'prop-types';
 const NewCartForm = (props) => {
   const handleNewPodFormSubmission = (event) => {
     event.preventDefault();
-    props.onNewCartCreation({ name: event.target.name.value, menu: event.target.menu.value, description: event.target.description.value, id: v4() });
+    props.onNewCartCreation({ 
+      name: event.target.name.value, 
+      menu: event.target.menu.value, 
+      description: event.target.description.value, 
+      id: v4()
+     });
   }
   return ( 
     <React.Fragment>

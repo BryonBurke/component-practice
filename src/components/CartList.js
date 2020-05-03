@@ -22,7 +22,7 @@ const CartList = (props) => {
 
 CartList.propTypes = {
   cartList: PropTypes.array,
-  onTicketSelection: PropTypes.func
+  onCartSelection: PropTypes.func
 };
  
 export default CartList;
