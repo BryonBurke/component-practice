@@ -9,12 +9,16 @@ const CartDetail = (props) => {
       <h3>{cart.menu}</h3>
       <h3>{cart.description}</h3>
       <hr />
+      <button 
+        onClick={props.onClickingEdit}>Update Ticket
+      </button>
     </React.Fragment>
   );
 }
  
 CartDetail.propTypes = {
-  cart: PropTypes.object
+  cart: PropTypes.object,
+  onClickingEdit: PropTypes.func
 }
 
 export default CartDetail;

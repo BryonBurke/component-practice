@@ -23,9 +23,6 @@ const NewCartForm = (props) => {
   );
 }
 
-
-
-
  
 NewCartForm.propTypes = {
   onNewCartCreation: PropTypes.func

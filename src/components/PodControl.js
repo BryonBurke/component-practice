@@ -10,6 +10,7 @@ class PodControl extends React.Component {
       formVisibleOnPage: false,
       masterCartList: [],
       selectedCart: null,
+      editing: false,
     };
   }
 
@@ -39,15 +40,24 @@ class PodControl extends React.Component {
     this.setState({ selectedCart: selectedCart });
   };
 
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({ editing: true });
+  };
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.selectedCart != null) {
-      currentlyVisibleState = <CartDetail cart={this.state.selectedCart} />;
-      buttonText = "Return to Cart Pod";
+      currentlyVisibleState = 
+        <CartDetail 
+          cart={this.state.selectedCart}
+          onClickingEdit = {this.handleEditClick} />;
+        buttonText = "Return to Cart Pod";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = (
-        <NewCartForm onNewCartCreation={this.handleAddingNewCartToList} />
+        <NewCartForm 
+          onNewCartCreation={this.handleAddingNewCartToList} />
       );
       buttonText = "Return to Cart Pod";
     } else {
