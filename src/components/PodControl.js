@@ -1,7 +1,8 @@
 import React from 'react';
 import NewCartForm from './NewCartForm';
 import CartList from './CartList';
-import CartDetail from './CartDetail'
+import CartDetail from './CartDetail';
+import EditCartForm from './EditCartForm';
 
 class PodControl extends React.Component {
   constructor(props) {
@@ -48,7 +49,12 @@ class PodControl extends React.Component {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.selectedCart != null) {
+    if (this.state.editing ) {      
+      currentlyVisibleState = 
+        <EditCartForm 
+          ticket = {this.state.selectedTicket} />
+        buttonText = "Return to Ticket List";
+    } else if (this.state.selectedCart != null) {
       currentlyVisibleState = 
         <CartDetail 
           cart={this.state.selectedCart}
