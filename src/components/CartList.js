@@ -2,7 +2,7 @@ import React from 'react';
 import Cart from './Cart';
 import PropTypes from 'prop-types'
 
-const numItemsPerRow = 10;
+const numItemsPerRow = 5;
 const spaceBetweenItems = 20; // edit to increase/decrease space between items
 
 const containerStyle = {

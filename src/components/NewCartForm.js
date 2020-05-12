@@ -1,9 +1,10 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import ReusableForm from "./ReusableForm";
 import PropTypes from 'prop-types';
 
 const NewCartForm = (props) => {
-  const handleNewPodFormSubmission = (event) => {
+  const handleNewCartFormSubmission = (event) => {
     event.preventDefault();
     props.onNewCartCreation({ 
       name: event.target.name.value, 
@@ -12,25 +13,17 @@ const NewCartForm = (props) => {
       id: v4()
      });
   }
-  return ( 
+  return (
+
     <React.Fragment>
-      <form onSubmit={handleNewPodFormSubmission}>
-        <input
-          type='text'
-          name='name'
-          placeholder='Cart Name' />
-        <input
-          type='text'
-          name='menu'
-          placeholder='menu' />
-        <textarea
-          name='description'
-          placeholder='Describe the food cart.' />
-        <button type='submit'>addNewCart!</button>
-      </form>
+      <ReusableForm 
+        formSubmissionHandler={handleNewCartFormSubmission}
+        buttonText="Help!" />
     </React.Fragment>
-   );
+  );
 }
+
+
 
 
  

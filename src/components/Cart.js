@@ -5,8 +5,7 @@ const Cart = (props) => {
     <React.Fragment>
       <div onClick ={() => props.whenCartClicked(props.id)}>
         <h3>{props.name}</h3>    
-        <hr/>
-        <hr/>
+     
       </div>
 
     </React.Fragment>
