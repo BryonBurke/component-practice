@@ -21,8 +21,10 @@ const itemStyle = {
   padding: `${spaceBetweenItems * 0.5}px`,
   backgroundColor: "palevioletred",
   textAlign: "center",
-  border: "10px solid blue",
-};
+  border: "3px solid blue",
+  borderRadius: "20%",
+  margin: "5px"
+,};
 
 const cardStyle = {
   backgroundColor: "palevioletred",
@@ -32,10 +34,7 @@ const cardStyle = {
 
 const CartList = (props) => {
   return (
-    <React.Fragment
-    
-      style={containerStyle}>
-        <div style={containerStyle}>
+    <div style={containerStyle}>
       {props.cartList.map((cart) => (
         <div style={itemStyle}>
           <Cart
@@ -50,9 +49,9 @@ const CartList = (props) => {
       ))}
 
 
-        </div>
+       
    
-    </React.Fragment>
+    </div>
   );
 }
 
