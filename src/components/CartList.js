@@ -21,10 +21,8 @@ const itemStyle = {
   padding: `${spaceBetweenItems * 0.5}px`,
   backgroundColor: "palevioletred",
   textAlign: "center",
-  border: "3px solid blue",
-  borderRadius: "20%",
-  margin: "5px"
-,};
+  border: "10px solid blue",
+};
 
 const cardStyle = {
   backgroundColor: "palevioletred",
