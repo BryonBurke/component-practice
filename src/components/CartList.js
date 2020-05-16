@@ -21,7 +21,7 @@ const itemStyle = {
   padding: `${spaceBetweenItems * 0.5}px`,
   backgroundColor: "palevioletred",
   textAlign: "center",
-  border: "10px solid blue",
+  border: "2px solid blue",
 };
 
 const cardStyle = {
@@ -39,6 +39,7 @@ const CartList = (props) => {
             whenCartClicked = { props.onCartSelection }
             name={cart.name}
             menu={cart.menu}
+            picture={cart.picture}
             description={cart.description}
             id = {cart.id}
             key = {cart.id}

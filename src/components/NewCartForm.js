@@ -8,6 +8,7 @@ const NewCartForm = (props) => {
     event.preventDefault();
     props.onNewCartCreation({ 
       name: event.target.name.value, 
+      picture: event.target.picture.value,
       menu: event.target.menu.value, 
       description: event.target.description.value, 
       id: v4()
@@ -18,7 +19,7 @@ const NewCartForm = (props) => {
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleNewCartFormSubmission}
-        buttonText="Help!" />
+        buttonText="Make new cart!" />
     </React.Fragment>
   );
 }

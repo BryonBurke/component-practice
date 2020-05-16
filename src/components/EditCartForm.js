@@ -10,6 +10,7 @@ function EditCartForm(props) {
     event.preventDefault();
     props.onEditCart({
       name: event.target.name.value,
+      picture: event.target.picture.value,
       menu: event.target.menu.value,
       description: event.target.description.value,
       id: cart.id,
