@@ -43,6 +43,7 @@ class PodControl extends React.Component {
     const selectedCart = this.state.masterCartList.filter(
       (cart) => cart.id === id
     )[0];
+    ;
     this.setState({ selectedCart: selectedCart });
   };
 
@@ -52,11 +53,22 @@ class PodControl extends React.Component {
   };
 
   handleEditingCartInList = (cartToEdit) => {
-    const editedMasterCartList = this.state.masterCartList
-      .filter((cart) => cart.id !== this.state.selectedCart.id)
-      .concat(cartToEdit);
+    
 
-    console.log(editedMasterCartList);
+
+
+    const selectedCartIndex = this.state.masterCartList.indexOf(this.state.selectedCart);
+    
+    const firstPartOfList = this.state.masterCartList
+    .filter((cart) => this.state.masterCartList.indexOf(cart) < selectedCartIndex );
+    const lastPartOfList = this.state.masterCartList
+    .filter((cart) => this.state.masterCartList.indexOf(cart) > selectedCartIndex);
+    
+    const editedMasterCartList = firstPartOfList
+      .concat(cartToEdit)
+      .concat(lastPartOfList);
+      
+      
 
     this.setState({
       masterCartList: editedMasterCartList,
