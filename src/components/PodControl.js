@@ -9,7 +9,7 @@ class PodControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterCartList: [{name: "titos", menu: "tacos"},2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0],
+      masterCartList: [],
       selectedCart: null,
       editing: false,
       

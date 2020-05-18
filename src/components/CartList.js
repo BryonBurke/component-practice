@@ -19,9 +19,12 @@ const itemStyle = {
   width: `${100 / numItemsPerRow}%`,
   boxSizing: "border-box",
   padding: `${spaceBetweenItems * 0.5}px`,
-  backgroundColor: "palevioletred",
+  backgroundColor: "orange",
   textAlign: "center",
-  border: "2px solid blue",
+  border: "solid",
+  
+  margin: "2px",
+  borderRadius: "10%"
 };
 
 const cardStyle = {
