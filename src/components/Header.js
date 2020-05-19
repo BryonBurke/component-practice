@@ -3,7 +3,7 @@ import React from "react";
 const headerStyle = {
   display: "block",
   flex: "none",
-  backgroundColor: "lightgreen",
+  backgroundColor: "lightblue",
   textAlign: "center",
 };
 

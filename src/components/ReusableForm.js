@@ -2,39 +2,49 @@ import React from "react";
 import PropTypes from "prop-types";
 import Form from "react-bootstrap/Form"
 
+const formStyle = {
+  backgroundColor: "success",
+  textAlign: "center",
+};
+const formItemStyle = {
+  height: "100px",
+}
+
 function ReusableForm(props) {
   return (
     <React.Fragment>
-
-
-      <form onSubmit={props.formSubmissionHandler}>
-
-        <Form.Group controlId="formBasicName">
-          <Form.Control type="text" name="name" placeholder="Name" />
+      <form style={formStyle} onSubmit={props.formSubmissionHandler}>
+        <Form.Group style={formItemStyle} controlId="formBasicName">
+          <Form.Control 
+          type="text" 
+          name="name" 
+          placeholder="Name" />
         </Form.Group>
-
-        <Form.Group controlId="formBasicPicture">
-          <Form.Control type="file" name="picture" placeholder="Picture" />
+        <hr />
+        <Form.Group style={formItemStyle} controlId="formBasicPicture">
+          <Form.Control 
+          type="file" 
+          name="picture" 
+          placeholder="Picture" />
         </Form.Group>
-
-        <Form.Group controlId="formBasicMenu">
-          <Form.Control type="text" name="menu" placeholder="Menu"/>
+        <hr />
+        <Form.Group style={formItemStyle} controlId="formBasicMenu">
+          <Form.Control 
+          type="text" 
+          name="menu" 
+          placeholder="Menu" />
         </Form.Group>
-
-        <Form.Group controlId="formDescriptionBasic">
-          <Form.Control type="text" name="description" placeholder="description"/>
+        <hr />
+        <Form.Group style={formItemStyle} controlId="formDescriptionBasic">
+          <Form.Control
+           type="text"
+           name="description"
+           placeholder="description"
+          />
         </Form.Group>
-
-
-       
-       
-       
-
-       
+        <hr />
         <button type="submit">{props.buttonText}</button>
       </form>
-
-      
     </React.Fragment>
   );
 }

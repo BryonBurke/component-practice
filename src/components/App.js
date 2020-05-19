@@ -8,7 +8,6 @@ function App() {
     <React.Fragment>
       <Header />
       <PodControl />
-      <Footer/>
     </React.Fragment>
   );
 }
