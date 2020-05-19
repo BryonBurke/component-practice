@@ -8,13 +8,25 @@ import PropTypes from 'prop-types';
 const NewCartForm = (props) => {
   const handleNewCartFormSubmission = (event) => {
     event.preventDefault();
-    props.onNewCartCreation({ 
-      name: event.target.name.value, 
-      picture: event.target.picture.value,
-      menu: event.target.menu.value, 
-      description: event.target.description.value, 
-      id: v4()
-     });
+
+var rows = [];
+
+
+/////////////////////////////////////////////////////
+ 
+for (var i = 0; i < 20; i++) {
+
+  props.onNewCartCreation({
+    name: "O",
+    picture: event.target.picture.value,
+    menu: event.target.menu.value,
+    description: event.target.description.value,
+    id: v4(),
+  });
+}
+
+//////////////////////////////////////////////////
+
   }
   return (
 
