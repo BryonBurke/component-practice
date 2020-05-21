@@ -9,23 +9,14 @@ const NewCartForm = (props) => {
   const handleNewCartFormSubmission = (event) => {
     event.preventDefault();
 
-var rows = [];
-
-
-/////////////////////////////////////////////////////
- 
-for (var i = 0; i < 20; i++) {
 
   props.onNewCartCreation({
-    name: "O",
+    name: "*",
     picture: event.target.picture.value,
     menu: event.target.menu.value,
     description: event.target.description.value,
     id: v4(),
   });
-}
-
-//////////////////////////////////////////////////
 
   }
   return (
