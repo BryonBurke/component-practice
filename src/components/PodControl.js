@@ -16,8 +16,6 @@ class PodControl extends React.Component {
     };
   }
 
-  
-
   handleClick = () => {
     if (this.state.selectedCart != null) {
       this.setState({
@@ -52,30 +50,16 @@ class PodControl extends React.Component {
     this.setState({ editing: true });
   };
 
-  handleEditingCartInList = (cartToEdit) => {
-    
-
-
-
-    const selectedCartIndex = this.state.masterCartList.indexOf(this.state.selectedCart);
-    
-    const firstPartOfList = this.state.masterCartList
-    .filter((cart) => this.state.masterCartList.indexOf(cart) < selectedCartIndex );
-    const lastPartOfList = this.state.masterCartList
-    .filter((cart) => this.state.masterCartList.indexOf(cart) > selectedCartIndex);
-    
-    const editedMasterCartList = firstPartOfList
-      .concat(cartToEdit)
-      .concat(lastPartOfList);
-      
-      
-
+  handleEditingCartInList = (ticketToEdit) => {
+    const editedMasterCartList = this.state.masterCartList
+      .filter(ticket => ticket.id !== this.state.selectedCart.id)
+      .concat(ticketToEdit);
     this.setState({
-      masterCartList: editedMasterCartList,
-      editing: false,
-      handleChangingSelectedCart: null,
-    });
-  };
+        masterCartList: editedMasterCartList,
+        editing: false,
+        selectedCart: null
+      });
+  }
 
   render() {
     let currentlyVisibleState = null;
@@ -87,7 +71,7 @@ class PodControl extends React.Component {
           onEditCart={this.handleEditingCartInList}
         />
       );
-      buttonText = "Return to Ticket List";
+      buttonText = "Return to Cart List";
     } else if (this.state.selectedCart != null) {
       currentlyVisibleState = (
         <CartDetail

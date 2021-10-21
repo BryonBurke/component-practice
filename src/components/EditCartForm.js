@@ -29,6 +29,7 @@ function EditCartForm(props) {
 
 
 EditCartForm.propTypes = {
+  cart: PropTypes.object,
   onEditCart: PropTypes.func
 }
 
