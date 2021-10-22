@@ -34,9 +34,10 @@ const cardStyle = {
 };
 
 const CartList = (props) => {
+  console.log(props)
   return (
     <div style={containerStyle}>
-      {props.cartList.map((cart) => (
+      {Object.values(props.cartList).map((cart) => (
         <div style={itemStyle}>
           <Cart
             whenCartClicked = { props.onCartSelection }

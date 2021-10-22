@@ -3,13 +3,13 @@ import NewCartForm from './NewCartForm';
 import CartList from './CartList';
 import CartDetail from './CartDetail';
 import EditCartForm from './EditCartForm';
+import { connect } from 'react-redux';
 
 class PodControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterCartList: [],
       selectedCart: null,
       editing: false,
       
@@ -31,29 +31,33 @@ class PodControl extends React.Component {
   };
 
   handleAddingNewCartToList = (newCart) => {
-    const newMasterCartList = this.state.masterCartList.concat(newCart);
-    console.log(newMasterCartList);
-    this.setState({ masterCartList: newMasterCartList });
+    const { dispatch } = this.props;
+    const { name, picture, menu, id } = newCart;
+    const action = {
+      type: 'ADD_CART',
+      name: name,
+      picture: picture,
+      menu: menu,
+      id: id,
+    }
+    dispatch(action);
     this.setState({ formVisibleOnPage: false });
   };
 
   handleChangingSelectedCart = (id) => {
-    const selectedCart = this.state.masterCartList.filter(
-      (cart) => cart.id === id
-    )[0];
-    ;
-    this.setState({ selectedCart: selectedCart });
-  };
+    const selectedCart = this.props.masterCartList[id];
+    this.setState({selectedCart: selectedCart});
+  }
 
   handleEditClick = () => {
     console.log("handleEditClick reached!");
     this.setState({ editing: true });
   };
 
-  handleEditingCartInList = (ticketToEdit) => {
+  handleEditingCartInList = (cartToEdit) => {
     const editedMasterCartList = this.state.masterCartList
-      .filter(ticket => ticket.id !== this.state.selectedCart.id)
-      .concat(ticketToEdit);
+      .filter(cart => cart.id !== this.state.selectedCart.id)
+      .concat(cartToEdit);
     this.setState({
         masterCartList: editedMasterCartList,
         editing: false,
@@ -88,7 +92,7 @@ class PodControl extends React.Component {
     } else {
       currentlyVisibleState = (
         <CartList
-          cartList={this.state.masterCartList}
+          cartList={this.props.masterCartList}
           onCartSelection={this.handleChangingSelectedCart}
         />
       );
@@ -102,5 +106,17 @@ class PodControl extends React.Component {
     );
   }
 }
+
+PodControl = connect()(PodControl);
+
+const mapStateToProps = state => {
+  return {
+    masterCartList: state
+  }
+}
+
+// Note: we are now passing mapStateToProps into the connect() function.
+
+PodControl = connect(mapStateToProps)(PodControl);
  
 export default PodControl;
