@@ -27,39 +27,28 @@ const itemStyle = {
   borderRadius: "10%"
 };
 
-const cardStyle = {
-  backgroundColor: "palevioletred",
-  height: "50px",
-  textAlign: "center",
-};
 
-const CartList = (props) => {
-  console.log(props)
+
+function CartList(props){
   return (
-    <div style={containerStyle}>
-      {Object.values(props.cartList).map((cart) => (
-        <div style={itemStyle}>
-          <Cart
-            whenCartClicked = { props.onCartSelection }
-            name={cart.name}
-            menu={cart.menu}
-            picture={cart.picture}
-            description={cart.description}
-            id = {cart.id}
-            key = {cart.id}
-          />
-        </div>
-      ))}
-
-
-       
-   
-    </div>
+    <React.Fragment>
+      <hr/>
+      {Object.values(props.cartList).map((cart) =>
+        <Cart
+          whenCartClicked = { props.onCartSelection }
+          cartName={cart.cartName}
+          menu={cart.menu}
+          description={cart.description}
+          id={cart.id}
+          key={cart.id}
+        />
+      )}
+    </React.Fragment>
   );
 }
 
 CartList.propTypes = {
-  cartList: PropTypes.array,
+  cartList: PropTypes.object,
   onCartSelection: PropTypes.func
 };
  

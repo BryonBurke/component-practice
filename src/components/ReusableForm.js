@@ -13,37 +13,19 @@ const formItemStyle = {
 function ReusableForm(props) {
   return (
     <React.Fragment>
-      <form style={formStyle} onSubmit={props.formSubmissionHandler}>
-        <Form.Group style={formItemStyle} controlId="formBasicName">
-          <Form.Control 
-          type="text" 
-          name="name" 
-          placeholder="Name" />
-        </Form.Group>
-        <hr />
-        <Form.Group style={formItemStyle} controlId="formBasicPicture">
-          <Form.Control 
-          type="file" 
-          name="picture" 
-          placeholder="Picture" />
-        </Form.Group>
-        <hr />
-        <Form.Group style={formItemStyle} controlId="formBasicMenu">
-          <Form.Control 
-          type="text" 
-          name="menu" 
-          placeholder="Menu" />
-        </Form.Group>
-        <hr />
-        <Form.Group style={formItemStyle} controlId="formDescriptionBasic">
-          <Form.Control
-           type="text"
-           name="description"
-           placeholder="description"
-          />
-        </Form.Group>
-        <hr />
-        <button type="submit">{props.buttonText}</button>
+      <form onSubmit={props.formSubmissionHandler}>
+        <input
+          type='text'
+          name='cartName'
+          placeholder='Name' />
+        <input
+          type='text'
+          name='menu'
+          placeholder='Menu' />
+        <textarea
+          name='description'
+          placeholder='Description.' />
+        <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
   );

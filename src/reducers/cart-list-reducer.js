@@ -1,12 +1,12 @@
 export default (state = {}, action) => {
-    const { names, location, issue, id } = action;
+    const { cartName, menu, description, id } = action;
     switch (action.type) {
     case 'ADD_CART':
       return Object.assign({}, state, {
         [id]: {
-          names: names,
-          location: location,
-          issue: issue,
+          cartName: cartName,
+          menu: menu,
+          description: description,
           id: id
         }
       });

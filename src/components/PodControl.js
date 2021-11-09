@@ -32,11 +32,11 @@ class PodControl extends React.Component {
 
   handleAddingNewCartToList = (newCart) => {
     const { dispatch } = this.props;
-    const { name, picture, menu, id } = newCart;
+    const { cartName, description, menu, id } = newCart;
     const action = {
       type: 'ADD_CART',
-      name: name,
-      picture: picture,
+      cartName: cartName,
+      description: description,
       menu: menu,
       id: id,
     }
@@ -70,30 +70,31 @@ class PodControl extends React.Component {
     let buttonText = null;
     if (this.state.editing) {
       currentlyVisibleState = (
-        <EditCartForm
-          cart={this.state.selectedCart}
-          onEditCart={this.handleEditingCartInList}
+      <EditCartForm
+        cart={this.state.selectedCart}
+        onEditCart={this.handleEditingCartInList}
         />
       );
       buttonText = "Return to Cart List";
     } else if (this.state.selectedCart != null) {
       currentlyVisibleState = (
-        <CartDetail
-          cart={this.state.selectedCart}
-          onClickingEdit={this.handleEditClick}
+      <CartDetail
+        cart={this.state.selectedCart}
+        onClickingEdit={this.handleEditClick}
         />
       );
       buttonText = "Return to Cart Pod";
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = (
-        <NewCartForm onNewCartCreation={this.handleAddingNewCartToList} />
+      <NewCartForm 
+        onNewCartCreation={this.handleAddingNewCartToList} />
       );
       buttonText = "Return to Cart Pod";
     } else {
       currentlyVisibleState = (
-        <CartList
-          cartList={this.props.masterCartList}
-          onCartSelection={this.handleChangingSelectedCart}
+      <CartList
+        cartList={this.props.masterCartList}
+        onCartSelection={this.handleChangingSelectedCart}
         />
       );
       buttonText = "Add cart";
