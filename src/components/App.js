@@ -11,6 +11,7 @@ function App() {
       
       
       <PodControl />
+      <Footer />
     </React.Fragment>
   );
 }
